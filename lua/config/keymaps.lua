@@ -12,10 +12,14 @@ for _, mode in ipairs({ "n", "i", "v" }) do
 end
 
 -- Move cursor with hjkl in INSERT mode
-set("i", "<C-h>", "<Left>", { desc = "Move left", remap = true })
-set("i", "<C-j>", "<Down>", { desc = "Move down", remap = true })
-set("i", "<C-k>", "<Up>", { desc = "Move up", remap = true })
-set("i", "<C-l>", "<Right>", { desc = "Move right", remap = true })
+set("i", "<C-h>", "<Left>", { desc = "Move left", noremap = true })
+set("i", "<C-j>", "<Down>", { desc = "Move down", noremap = true })
+set("i", "<C-k>", "<Up>", { desc = "Move up", noremap = true })
+set("i", "<C-l>", "<Right>", { desc = "Move right", noremap = true })
+
+-- Delete word before cursor
+set("i", "<C-BS>", "<C-w>", { desc = "Delete word before cursor", noremap = true }) -- mordern terminals
+set("i", "<C-h>", "<C-w>", { desc = "Delete word before cursor", noremap = true }) -- legacy terminals
 
 -- Shift lines in VISUAL mode
 set("v", "J", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Shift highlighted line(s) down" })
