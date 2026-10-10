@@ -9,3 +9,4 @@ vim.g.snacks_animate = false
 local opt = vim.opt
 
 opt.scrolloff = 8
+opt.colorcolumn = "80,120"
